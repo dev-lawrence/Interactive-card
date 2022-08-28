@@ -1,1 +1,274 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pry-font: "Space Grotesk", sans-serif;
+  --bg-clr: #e6e6e6;
+  --input-active: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+  --input-error: hsl(0, 100%, 66%);
+  --accent-clr-400: hsl(278, 68%, 11%);
+  --accent-clr-350: hsl(279, 6%, 55%);
+  --accent-clr-300: hsl(270, 3%, 87%);
+  --light-clr: hsl(0, 0%, 100%);
+}
+
+img {
+  width: 100%;
+}
+
+label {
+  display: inline-block;
+}
+
+body {
+  font-family: var(--pry-font);
+  line-height: 1.6;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+@media (min-width: 48rem) {
+  .container {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 75rem) {
+  .container {
+    width: 1200px;
+  }
+}
+@media (min-width: 90rem) {
+  .container {
+    width: 700px;
+  }
+}
+
+.form-container {
+  height: 100%;
+}
+.form-container .cards {
+  background-image: url(.././images/bg-main-mobile.png);
+  width: 100%;
+  height: 280px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 3rem;
+}
+@media (min-width: 75rem) {
+  .form-container .cards {
+    background-image: url(.././images/bg-main-desktop.png);
+    width: 360px;
+    height: 100%;
+  }
+}
+.form-container img {
+  width: 400px;
+}
+@media (max-width: 25.875rem) {
+  .form-container img {
+    width: 300px;
+  }
+}
+.form-container .card-content {
+  padding: 0 1rem;
+  position: relative;
+}
+.form-container .card-back {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+}
+@media (min-width: 75rem) {
+  .form-container .card-back {
+    top: 17rem;
+    left: 10rem;
+  }
+}
+.form-container .card-back p {
+  position: absolute;
+  top: 42%;
+  right: 3rem;
+  color: var(--accent-clr-300);
+  letter-spacing: 1px;
+}
+@media (max-width: 25.875rem) {
+  .form-container .card-back p {
+    top: 40%;
+  }
+}
+@media (min-width: 75rem) {
+  .form-container .card-back p {
+    left: 19rem;
+  }
+}
+.form-container .card-front {
+  position: absolute;
+  top: 7.75rem;
+  z-index: 2;
+}
+@media (min-width: 75rem) {
+  .form-container .card-front {
+    top: 2rem;
+    left: 5rem;
+  }
+}
+.form-container .card-front::before {
+  content: "";
+  position: absolute;
+  left: 1.2rem;
+  top: 2rem;
+  background-color: var(--light-clr);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+@media (max-width: 25.875rem) {
+  .form-container .card-front::before {
+    top: 1.2rem;
+    width: 35px;
+    height: 35px;
+  }
+}
+.form-container .card-front::after {
+  content: "";
+  position: absolute;
+  left: 4.5rem;
+  top: 2.7rem;
+  background-color: transparent;
+  border: 2px solid var(--light-clr);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+@media (max-width: 25.875rem) {
+  .form-container .card-front::after {
+    top: 1.7rem;
+  }
+}
+.form-container .card-front--content {
+  position: relative;
+  width: 100%;
+  color: var(--light-clr);
+}
+.form-container .card-front--content h2 {
+  position: absolute;
+  top: -7.5rem;
+  right: -9.5rem;
+  font-size: 2rem;
+  transform: translateX(-50%);
+}
+@media (max-width: 25.875rem) {
+  .form-container .card-front--content h2 {
+    font-size: 1.3rem;
+    top: -6rem;
+    right: -5rem;
+  }
+}
+.form-container .card-front--content h3 {
+  position: absolute;
+  top: -3.5rem;
+  font-size: 1rem;
+  left: 1.2rem;
+  font-weight: lighter;
+}
+.form-container .card-front--content .time {
+  position: absolute;
+  top: -3.5rem;
+  right: 1.2rem;
+  display: flex;
+}
+@media (max-width: 25.875rem) {
+  .form-container .card-front--content h3,
+.form-container .card-front--content .time {
+    font-size: 0.9rem;
+    top: -3rem;
+  }
+}
+.form-container .form {
+  padding: 9rem 1rem 3rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+@media (min-width: 75rem) {
+  .form-container .form {
+    z-index: 10;
+  }
+}
+@media (max-width: 25.875rem) {
+  .form-container .form {
+    padding-top: 6rem;
+  }
+}
+.form-container .form-control {
+  margin-bottom: 1rem;
+}
+.form-container .form label {
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  color: var(--accent-clr-400);
+  letter-spacing: 1.2px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.form-container .form input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--accent-clr-350);
+  font-family: inherit;
+  padding-left: 1rem;
+}
+.form-container .form ::placeholder {
+  color: var(--accent-clr-350);
+}
+.form-container .form .time {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.form-container .form .time input {
+  width: 40%;
+}
+.form-container .form .d-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.form-container .form .d-flex .cvc {
+  width: 100%;
+  align-self: center;
+}
+.form-container .form .button {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.form-container .form .button button {
+  width: 100%;
+  padding: 1.2rem 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: var(--accent-clr-400);
+  color: var(--light-clr);
+  font-family: inherit;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+@media (min-width: 75rem) {
+  .d-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

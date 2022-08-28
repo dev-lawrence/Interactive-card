@@ -1,1 +1,291 @@
+@import './breakpoints';
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --pry-font: 'Space Grotesk', sans-serif;
+
+  --bg-clr: #e6e6e6;
+  --input-active: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+  --input-error: hsl(0, 100%, 66%);
+  --accent-clr-400: hsl(278, 68%, 11%);
+  --accent-clr-350: hsl(279, 6%, 55%);
+  --accent-clr-300: hsl(270, 3%, 87%);
+
+  --light-clr: hsl(0, 0%, 100%);
+}
+
+img {
+  width: 100%;
+}
+
+label {
+  display: inline-block;
+}
+
+body {
+  font-family: var(--pry-font);
+  line-height: 1.6;
+  width: 100%;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @include medium {
+    width: 700px;
+    margin: 0 auto;
+  }
+
+  @include extra-large {
+    width: 1200px;
+  }
+
+  @include huge {
+    width: 700px;
+  }
+}
+
+.form-container {
+  height: 100%;
+
+  .cards {
+    background-image: url(.././images/bg-main-mobile.png);
+    width: 100%;
+    height: 280px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 3rem;
+
+    @include extra-large {
+      background-image: url(.././images/bg-main-desktop.png);
+      width: 360px;
+      height: 100%;
+    }
+  }
+
+  img {
+    width: 400px;
+
+    @include small {
+      width: 300px;
+    }
+  }
+
+  .card-content {
+    padding: 0 1rem;
+    position: relative;
+  }
+
+  .card-back {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+
+    @include extra-large {
+      top: 17rem;
+      left: 10rem;
+    }
+
+    p {
+      position: absolute;
+      top: 42%;
+      right: 3rem;
+      color: var(--accent-clr-300);
+      letter-spacing: 1px;
+
+      @include small {
+        top: 40%;
+      }
+
+      @include extra-large {
+        left: 19rem;
+      }
+    }
+  }
+
+  .card-front {
+    position: absolute;
+    top: 7.75rem;
+    z-index: 2;
+
+    @include extra-large {
+      top: 2rem;
+      left: 5rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 1.2rem;
+      top: 2rem;
+      background-color: var(--light-clr);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+      @include small {
+        top: 1.2rem;
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 4.5rem;
+      top: 2.7rem;
+      background-color: transparent;
+      border: 2px solid var(--light-clr);
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+
+      @include small {
+        top: 1.7rem;
+      }
+    }
+
+    &--content {
+      position: relative;
+      width: 100%;
+      color: var(--light-clr);
+
+      h2 {
+        position: absolute;
+        top: -7.5rem;
+        right: -9.5rem;
+        font-size: 2rem;
+        transform: translateX(-50%);
+
+        @include small {
+          font-size: 1.3rem;
+          top: -6rem;
+          right: -5rem;
+        }
+      }
+
+      h3 {
+        position: absolute;
+        top: -3.5rem;
+        font-size: 1rem;
+        left: 1.2rem;
+        font-weight: lighter;
+      }
+
+      .time {
+        position: absolute;
+        top: -3.5rem;
+        right: 1.2rem;
+        display: flex;
+      }
+
+      @include small {
+        h3,
+        .time {
+          font-size: 0.9rem;
+          top: -3rem;
+        }
+      }
+    }
+  }
+
+  // Form Input
+  .form {
+    padding: 9rem 1rem 3rem;
+
+    @include extra-large {
+      z-index: 10;
+    }
+
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include small {
+      padding-top: 6rem;
+    }
+
+    &-control {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+      color: var(--accent-clr-400);
+      letter-spacing: 1.2px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      height: 45px;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid var(--accent-clr-350);
+      font-family: inherit;
+      padding-left: 1rem;
+    }
+
+    ::placeholder {
+      color: var(--accent-clr-350);
+    }
+
+    .time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      input {
+        width: 40%;
+      }
+    }
+
+    .d-flex {
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      .cvc {
+        width: 100%;
+        align-self: center;
+      }
+    }
+
+    .button {
+      text-align: center;
+      margin-top: 1.5rem;
+
+      button {
+        width: 100%;
+        padding: 1.2rem 0;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        background-color: var(--accent-clr-400);
+        color: var(--light-clr);
+        font-family: inherit;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+//  at large screens
+@include extra-large {
+  .d-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
