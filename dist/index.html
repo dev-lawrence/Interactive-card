@@ -51,30 +51,15 @@
         </div>
 
         <!-- form -->
-        <form
-          autocomplete="off"
-          id="form"
-          class="form container"
-          data-netlify="true"
-        >
+        <form autocomplete="off" id="form" class="form container">
           <div class=".input-control">
             <label for="name">Cardholder Name</label><br />
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="e.g. Jane Appleseed"
-            />
+            <input type="text" id="name" placeholder="e.g. Jane Appleseed" />
             <p class="error-msg"></p>
           </div>
           <div class="input-control">
             <label for="number">Card Number</label><br />
-            <input
-              type="text"
-              name="number"
-              id="number"
-              placeholder="e.g. 1234 5678 9123"
-            />
+            <input type="text" id="number" placeholder="e.g. 1234 5678 9123" />
             <p class="error-msg"></p>
           </div>
           <div class="d-flex">
@@ -82,24 +67,18 @@
               <label>Exp. Date (MM/YY)</label><br />
               <div class="time">
                 <div class="month">
-                  <input type="text" name="month" id="month" placeholder="MM" />
+                  <input type="text" id="month" placeholder="MM" />
                   <p class="error-msg"></p>
                 </div>
                 <div class="year">
-                  <input type="text" name="year" id="year" placeholder="YY" />
+                  <input type="text" id="year" placeholder="YY" />
                   <p class="error-msg"></p>
                 </div>
               </div>
             </div>
             <div class="input-control cvc">
               <label for="cvc">cvc</label><br />
-              <input
-                class="cvc"
-                type="text"
-                name="cvc"
-                id="cvc"
-                placeholder="e.g. 123 "
-              />
+              <input class="cvc" type="text" id="cvc" placeholder="e.g. 123 " />
               <p class="error-msg"></p>
             </div>
           </div>
