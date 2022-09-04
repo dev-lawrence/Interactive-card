@@ -10,10 +10,10 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Interactive card details form</title>
+    <title>Interactive Card</title>
   </head>
   <body>
-    <div class="form-container d-grid">
+    <div class="main-container d-grid">
       <div class="cards">
         <div class="card-content container">
           <!-- card front -->
@@ -23,8 +23,9 @@
               <h2 id="card-number">0000 0000 0000 0000</h2>
               <h3 id="card-name">Jane Appleseed</h3>
               <div class="time">
-                <p id="month">00/</p>
-                <p id="year">00</p>
+                <p id="card-month">00</p>
+                /
+                <p id="card-year">00</p>
               </div>
             </div>
           </div>
@@ -36,56 +37,79 @@
         </div>
       </div>
 
-      <form autocomplete="off" class="form container" data-netlify="true">
-        <div class="form-control">
-          <label for="name">Cardholder Name</label><br />
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="e.g. Jane Appleseed"
-          />
+      <div class="form-container">
+        <!-- success message -->
+        <div id="success-msg" class="success-msg">
+          <img src="./images/icon-complete.svg" alt="" />
+          <h2>thank you!</h2>
+          <p>We've added your card details</p>
+          <div class="button button--success">
+            <button href="#" id="btn" class="btn" type="submit">
+              Continue
+            </button>
+          </div>
         </div>
 
-        <div class="form-control">
-          <label for="number">Card Number</label><br />
-          <input
-            type="text"
-            name="number"
-            id="number"
-            placeholder="e.g. 1234 5678 9123"
-          />
-        </div>
-
-        <div class="d-flex">
-          <div class="form-control">
-            <label>Exp. Date (MM/YY)</label><br />
-            <div class="time">
-              <input type="text" name="month" id="month" placeholder="MM" />
-              <input type="text" name="year" id="year" placeholder="YY" />
+        <!-- form -->
+        <form
+          autocomplete="off"
+          id="form"
+          class="form container"
+          data-netlify="true"
+        >
+          <div class=".input-control">
+            <label for="name">Cardholder Name</label><br />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="e.g. Jane Appleseed"
+            />
+            <p class="error-msg"></p>
+          </div>
+          <div class="input-control">
+            <label for="number">Card Number</label><br />
+            <input
+              type="text"
+              name="number"
+              id="number"
+              placeholder="e.g. 1234 5678 9123"
+            />
+            <p class="error-msg"></p>
+          </div>
+          <div class="d-flex">
+            <div class="input-control">
+              <label>Exp. Date (MM/YY)</label><br />
+              <div class="time">
+                <div class="month">
+                  <input type="text" name="month" id="month" placeholder="MM" />
+                  <p class="error-msg"></p>
+                </div>
+                <div class="year">
+                  <input type="text" name="year" id="year" placeholder="YY" />
+                  <p class="error-msg"></p>
+                </div>
+              </div>
+            </div>
+            <div class="input-control cvc">
+              <label for="cvc">cvc</label><br />
+              <input
+                class="cvc"
+                type="text"
+                name="cvc"
+                id="cvc"
+                placeholder="e.g. 123 "
+              />
+              <p class="error-msg"></p>
             </div>
           </div>
-
-          <div class="form-control cvc">
-            <label for="cvc">cvc</label><br />
-            <input
-              class="cvc"
-              type="text"
-              name="cvc"
-              id="cvc"
-              placeholder="e.g. 123 "
-            />
+          <div class="button">
+            <button id="btn" class="btn" type="submit">Confirm</button>
           </div>
-        </div>
-
-        <div class="button">
-          <button class="btn" type="submit">Confirm</button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
 
-    <!-- Completed state start -->
-    <!-- Thank you! We've added your card details Continue -->
     <script src="./app.js"></script>
   </body>
 </html>

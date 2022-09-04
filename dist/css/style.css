@@ -31,10 +31,6 @@ body {
   height: 100vh;
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
 @media (min-width: 48rem) {
   .container {
     width: 700px;
@@ -52,10 +48,12 @@ body {
   }
 }
 
-.form-container {
+.main-container {
   height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
-.form-container .cards {
+.main-container .cards {
   background-image: url(.././images/bg-main-mobile.png);
   width: 100%;
   height: 280px;
@@ -65,36 +63,36 @@ body {
   padding-top: 3rem;
 }
 @media (min-width: 75rem) {
-  .form-container .cards {
+  .main-container .cards {
     background-image: url(.././images/bg-main-desktop.png);
-    width: 360px;
+    width: 400px;
     height: 100%;
   }
 }
-.form-container img {
+.main-container img {
   width: 400px;
 }
 @media (max-width: 25.875rem) {
-  .form-container img {
+  .main-container img {
     width: 300px;
   }
 }
-.form-container .card-content {
+.main-container .card-content {
   padding: 0 1rem;
   position: relative;
 }
-.form-container .card-back {
+.main-container .card-back {
   position: absolute;
   top: 0;
   right: 1rem;
 }
 @media (min-width: 75rem) {
-  .form-container .card-back {
+  .main-container .card-back {
     top: 17rem;
-    left: 10rem;
+    left: 12rem;
   }
 }
-.form-container .card-back p {
+.main-container .card-back p {
   position: absolute;
   top: 42%;
   right: 3rem;
@@ -102,27 +100,27 @@ body {
   letter-spacing: 1px;
 }
 @media (max-width: 25.875rem) {
-  .form-container .card-back p {
+  .main-container .card-back p {
     top: 40%;
   }
 }
 @media (min-width: 75rem) {
-  .form-container .card-back p {
-    left: 19rem;
+  .main-container .card-back p {
+    left: 20rem;
   }
 }
-.form-container .card-front {
+.main-container .card-front {
   position: absolute;
   top: 7.75rem;
   z-index: 2;
 }
 @media (min-width: 75rem) {
-  .form-container .card-front {
+  .main-container .card-front {
     top: 2rem;
-    left: 5rem;
+    left: 7rem;
   }
 }
-.form-container .card-front::before {
+.main-container .card-front::before {
   content: "";
   position: absolute;
   left: 1.2rem;
@@ -133,13 +131,13 @@ body {
   border-radius: 50%;
 }
 @media (max-width: 25.875rem) {
-  .form-container .card-front::before {
+  .main-container .card-front::before {
     top: 1.2rem;
     width: 35px;
     height: 35px;
   }
 }
-.form-container .card-front::after {
+.main-container .card-front::after {
   content: "";
   position: absolute;
   left: 4.5rem;
@@ -151,109 +149,58 @@ body {
   border-radius: 50%;
 }
 @media (max-width: 25.875rem) {
-  .form-container .card-front::after {
+  .main-container .card-front::after {
     top: 1.7rem;
   }
 }
-.form-container .card-front--content {
+.main-container .card-front--content {
   position: relative;
   width: 100%;
   color: var(--light-clr);
 }
-.form-container .card-front--content h2 {
+.main-container .card-front--content h2 {
+  width: 100%;
   position: absolute;
   top: -7.5rem;
-  right: -9.5rem;
-  font-size: 2rem;
+  left: 15.8rem;
+  font-size: 1.7rem;
   transform: translateX(-50%);
 }
 @media (max-width: 25.875rem) {
-  .form-container .card-front--content h2 {
+  .main-container .card-front--content h2 {
     font-size: 1.3rem;
     top: -6rem;
-    right: -5rem;
+    left: 12rem;
   }
 }
-.form-container .card-front--content h3 {
+.main-container .card-front--content h3 {
   position: absolute;
   top: -3.5rem;
   font-size: 1rem;
   left: 1.2rem;
   font-weight: lighter;
 }
-.form-container .card-front--content .time {
+.main-container .card-front--content .time {
   position: absolute;
   top: -3.5rem;
   right: 1.2rem;
   display: flex;
 }
 @media (max-width: 25.875rem) {
-  .form-container .card-front--content h3,
-.form-container .card-front--content .time {
+  .main-container .card-front--content h3,
+.main-container .card-front--content .time {
     font-size: 0.9rem;
     top: -3rem;
   }
 }
-.form-container .form {
-  padding: 9rem 1rem 3rem;
-  max-width: 400px;
-  margin: 0 auto;
+.main-container .form-container {
+  z-index: 10;
 }
-@media (min-width: 75rem) {
-  .form-container .form {
-    z-index: 10;
-  }
-}
-@media (max-width: 25.875rem) {
-  .form-container .form {
-    padding-top: 6rem;
-  }
-}
-.form-container .form-control {
-  margin-bottom: 1rem;
-}
-.form-container .form label {
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-  color: var(--accent-clr-400);
-  letter-spacing: 1.2px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.form-container .form input {
-  width: 100%;
-  height: 45px;
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid var(--accent-clr-350);
-  font-family: inherit;
-  padding-left: 1rem;
-}
-.form-container .form ::placeholder {
-  color: var(--accent-clr-350);
-}
-.form-container .form .time {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.form-container .form .time input {
-  width: 40%;
-}
-.form-container .form .d-flex {
-  width: 100%;
-  display: flex;
-  align-items: center;
-}
-.form-container .form .d-flex .cvc {
-  width: 100%;
-  align-self: center;
-}
-.form-container .form .button {
+.main-container .form-container .button {
   text-align: center;
   margin-top: 1.5rem;
 }
-.form-container .form .button button {
+.main-container .form-container .button button {
   width: 100%;
   padding: 1.2rem 0;
   border-radius: 5px;
@@ -264,6 +211,96 @@ body {
   font-family: inherit;
   font-size: 1.2rem;
   cursor: pointer;
+}
+.main-container .form {
+  padding: 9rem 1rem 3rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+@media (min-width: 75rem) {
+  .main-container .form {
+    z-index: 10;
+  }
+}
+@media (max-width: 25.875rem) {
+  .main-container .form {
+    padding-top: 6rem;
+  }
+}
+.main-container .form .input-control {
+  margin-bottom: 1rem;
+}
+.main-container .form label {
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+  color: var(--accent-clr-400);
+  letter-spacing: 1.2px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.main-container .form input {
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--accent-clr-350);
+  font-family: inherit;
+  padding-left: 1rem;
+}
+.main-container .form ::placeholder {
+  color: var(--accent-clr-350);
+}
+.main-container .form .time {
+  display: flex;
+  height: 100%;
+  gap: 0.5rem;
+  margin-right: 2rem;
+}
+.main-container .form .time input {
+  width: 100%;
+}
+.main-container .form .d-flex {
+  width: 100%;
+  display: flex;
+}
+.main-container .form .d-flex .cvc {
+  width: 100%;
+}
+.main-container .form .error-msg {
+  font-size: 0.8rem;
+  padding-top: 0.3rem;
+  color: var(--input-error);
+}
+.main-container .success-msg {
+  padding: 9rem 0 3rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+@media (min-width: 75rem) {
+  .main-container .success-msg {
+    padding: 0;
+  }
+}
+.main-container .success-msg img {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+.main-container .success-msg h2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-clr-400);
+  margin-bottom: 0.5rem;
+}
+.main-container .success-msg p {
+  color: var(--accent-clr-350);
+}
+.main-container .success-msg .button--success {
+  width: 60%;
 }
 
 @media (min-width: 75rem) {
