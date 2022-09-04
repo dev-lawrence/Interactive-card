@@ -126,7 +126,7 @@ const submitForm = (e) => {
   }
 
   // if the lenght is not 19 characters
-  if (numberInput.value.length != 19) {
+  else if (numberInput.value.length != 19) {
     message(numberInput, `Number should not be less than 16`);
   }
 
